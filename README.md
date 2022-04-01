@@ -5,20 +5,20 @@ In order to take part in the iPraktikum course, you need to submit an interactiv
 
 ## Submission
 
-* Clone this repository and use it to work on your app.
-* Follow the branching model described [in these slides](https://confluence.ase.in.tum.de/download/attachments/121473230/PR.pdf?version=1&modificationDate=1648402791332&api=v2&download=true).
-* Submit your app **by creating a pull request**, which one of the tutors will review.
-  * Requirements NOT met: The tutor will ask you to update your pull request.
-  * Requirements met: The tutor will accept the pull request.
-* The **Deadline** is **20.04.2022, 11:59 PM**
-  * Make sure to submit your solution **at least one week earlier**, allowing sufficient time for pull request reviews by tutors.
-* **Interviews**: **21.04.2022 - 27.04.2022**
-  * After accepting you submission, we may invite you to a short interview to ensure that you implemented your Mandatory Assignment without the help of third parties.
 
+-   **Clone this repository** and use it to work on your app.
+-   **Follow the branching model** described in [this introductory video](https://www.youtube.com/watch?v=7TQ3xqglY80) or in [these slides](https://confluence.ase.in.tum.de/display/IOS22CW/Intro+Course%3A+Mandatory+Assignment?preview=/120160455/121474151/PR.pdf).
+-   Submit your app **by creating a pull request**, which one of the tutors will review.
+    -   Requirements NOT met: The tutor asks you to update your pull request.
+    -   Requirements met: The tutor will accept the pull request.
+-   The **Deadline** is **20.04.2022, 11:59 PM**
+    -   Make sure to submit your solution **at least one week earlier**, allowing sufficient time for pull request reviews by tutors.
+-   **Interviews**: **21.04.2022 - 27.04.2022**
+    -   After accepting you submission, we may invite you to a short interview to ensure that you implemented your Mandatory Assignment without the help of third parties.
 
 ## Requirements
 
-The table below lists all of the requirements to your iPhone app in a short form. Refer to the [detailed list with hints and how-to's](https://confluence.ase.in.tum.de/pages/resumedraft.action?draftId=120160456&draftShareId=8be0cc1b-9065-41d1-bd8a-3aaf88f42b6a&) while working on your app.
+The table below lists all of the requirements to your iPhone app in a short form. Refer to the [detailed list with hints and how-to's](https://confluence.ase.in.tum.de/display/IOS22CW/Intro+Course%3A+Mandatory+Assignment) while working on your app.
 
 After verifying that you implemented each of them, put a ✅ into the *Implemented* column before submitting the pull request for review. Don't touch the *Fulfilled* column, it will be filled by your tutor.
 
