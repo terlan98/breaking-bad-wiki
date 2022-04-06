@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6527004627FD7BD800289FF7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6527004527FD7BD800289FF7 /* Launch Screen.storyboard */; };
+		65746E7D27FD7F9E00C92DD4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E7C27FD7F9E00C92DD4 /* Character.swift */; };
+		65746E7F27FD805E00C92DD4 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E7E27FD805E00C92DD4 /* CharacterList.swift */; };
+		65746E8127FD810500C92DD4 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E8027FD810500C92DD4 /* CharacterListViewModel.swift */; };
+		65746E8327FD945300C92DD4 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E8227FD945300C92DD4 /* CharacterCell.swift */; };
+		65746E8527FDA6E000C92DD4 /* BackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E8427FDA6E000C92DD4 /* BackgroundViewModifier.swift */; };
+		65746E8827FDB60C00C92DD4 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E8727FDB60C00C92DD4 /* CharacterDetail.swift */; };
+		65746E8D27FDB8E900C92DD4 /* Quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65746E8C27FDB8E900C92DD4 /* Quicksand.ttf */; };
+		65746E9127FDC22300C92DD4 /* FancyScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 65746E9027FDC22300C92DD4 /* FancyScrollView */; };
 		65D00D8527FD77DB00F9BF98 /* breakingBadWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D00D8427FD77DB00F9BF98 /* breakingBadWikiApp.swift */; };
 		65D00D8727FD77DB00F9BF98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D00D8627FD77DB00F9BF98 /* ContentView.swift */; };
 		65D00D8927FD77DD00F9BF98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D00D8827FD77DD00F9BF98 /* Assets.xcassets */; };
@@ -16,6 +24,14 @@
 
 /* Begin PBXFileReference section */
 		6527004527FD7BD800289FF7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		65746E7C27FD7F9E00C92DD4 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		65746E7E27FD805E00C92DD4 /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
+		65746E8027FD810500C92DD4 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		65746E8227FD945300C92DD4 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		65746E8427FDA6E000C92DD4 /* BackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewModifier.swift; sourceTree = "<group>"; };
+		65746E8727FDB60C00C92DD4 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		65746E8C27FDB8E900C92DD4 /* Quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand.ttf; sourceTree = "<group>"; };
+		65746E8E27FDBA7D00C92DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		65D00D8127FD77DB00F9BF98 /* breakingBadWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakingBadWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D00D8427FD77DB00F9BF98 /* breakingBadWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breakingBadWikiApp.swift; sourceTree = "<group>"; };
 		65D00D8627FD77DB00F9BF98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65746E9127FDC22300C92DD4 /* FancyScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +54,7 @@
 		65746E7927FD7E2200C92DD4 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				65746E7C27FD7F9E00C92DD4 /* Character.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -44,6 +62,7 @@
 		65746E7A27FD7E2600C92DD4 /* modelView */ = {
 			isa = PBXGroup;
 			children = (
+				65746E8027FD810500C92DD4 /* CharacterListViewModel.swift */,
 			);
 			path = modelView;
 			sourceTree = "<group>";
@@ -51,8 +70,27 @@
 		65746E7B27FD7E2E00C92DD4 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				65746E7E27FD805E00C92DD4 /* CharacterList.swift */,
+				65746E8227FD945300C92DD4 /* CharacterCell.swift */,
+				65746E8727FDB60C00C92DD4 /* CharacterDetail.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		65746E8627FDA6E500C92DD4 /* viewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				65746E8427FDA6E000C92DD4 /* BackgroundViewModifier.swift */,
+			);
+			path = viewModifiers;
+			sourceTree = "<group>";
+		};
+		65746E8927FDB83700C92DD4 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				65746E8C27FDB8E900C92DD4 /* Quicksand.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		65D00D7827FD77DB00F9BF98 = {
@@ -74,9 +112,12 @@
 		65D00D8327FD77DB00F9BF98 /* breakingBadWiki */ = {
 			isa = PBXGroup;
 			children = (
+				65746E8E27FDBA7D00C92DD4 /* Info.plist */,
+				65746E8927FDB83700C92DD4 /* fonts */,
 				65746E7927FD7E2200C92DD4 /* model */,
 				65746E7A27FD7E2600C92DD4 /* modelView */,
 				65746E7B27FD7E2E00C92DD4 /* view */,
+				65746E8627FDA6E500C92DD4 /* viewModifiers */,
 				65D00D8427FD77DB00F9BF98 /* breakingBadWikiApp.swift */,
 				65D00D8627FD77DB00F9BF98 /* ContentView.swift */,
 				65D00D8827FD77DD00F9BF98 /* Assets.xcassets */,
@@ -110,6 +151,9 @@
 			dependencies = (
 			);
 			name = breakingBadWiki;
+			packageProductDependencies = (
+				65746E9027FDC22300C92DD4 /* FancyScrollView */,
+			);
 			productName = breakingBadWiki;
 			productReference = 65D00D8127FD77DB00F9BF98 /* breakingBadWiki.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 65D00D7827FD77DB00F9BF98;
+			packageReferences = (
+				65746E8F27FDC22300C92DD4 /* XCRemoteSwiftPackageReference "FancyScrollView" */,
+			);
 			productRefGroup = 65D00D8227FD77DB00F9BF98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65746E8D27FDB8E900C92DD4 /* Quicksand.ttf in Resources */,
 				6527004627FD7BD800289FF7 /* Launch Screen.storyboard in Resources */,
 				65D00D8C27FD77DD00F9BF98 /* Preview Assets.xcassets in Resources */,
 				65D00D8927FD77DD00F9BF98 /* Assets.xcassets in Resources */,
@@ -165,8 +213,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65746E8827FDB60C00C92DD4 /* CharacterDetail.swift in Sources */,
+				65746E7D27FD7F9E00C92DD4 /* Character.swift in Sources */,
 				65D00D8727FD77DB00F9BF98 /* ContentView.swift in Sources */,
 				65D00D8527FD77DB00F9BF98 /* breakingBadWikiApp.swift in Sources */,
+				65746E8327FD945300C92DD4 /* CharacterCell.swift in Sources */,
+				65746E8127FD810500C92DD4 /* CharacterListViewModel.swift in Sources */,
+				65746E8527FDA6E000C92DD4 /* BackgroundViewModifier.swift in Sources */,
+				65746E7F27FD805E00C92DD4 /* CharacterList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +352,7 @@
 				DEVELOPMENT_TEAM = N422BWS4VH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = breakingBadWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -327,6 +382,7 @@
 				DEVELOPMENT_TEAM = N422BWS4VH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = breakingBadWiki/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -367,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65746E8F27FDC22300C92DD4 /* XCRemoteSwiftPackageReference "FancyScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nerdsupremacist/FancyScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65746E9027FDC22300C92DD4 /* FancyScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65746E8F27FDC22300C92DD4 /* XCRemoteSwiftPackageReference "FancyScrollView" */;
+			productName = FancyScrollView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65D00D7927FD77DB00F9BF98 /* Project object */;
 }
