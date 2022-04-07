@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - FontNames
 /// An enum containing the font names used in the app
 enum FontNames: String {
     case Default = "Quicksand"

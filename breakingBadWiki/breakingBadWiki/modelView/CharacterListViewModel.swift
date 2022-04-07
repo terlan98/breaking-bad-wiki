@@ -8,14 +8,17 @@
 import Foundation
 import OSLog
 
-
+// MARK: - CharacterListViewModel
 @MainActor
 class CharacterListViewModel: ObservableObject {
     
+    /// The `Character`s of Breaking Bad
     @Published var characters: [Character] = []
     
+    /// Logs information about the contents of the view model
     let logger = Logger()
     
+    /// Fetches the list of `Character`s from the Breaking Bad API
     func fetchData() async {
         let urlString = "https://www.breakingbadapi.com/api/characters"
         
@@ -32,6 +35,7 @@ class CharacterListViewModel: ObservableObject {
         }
     }
     
+    /// An instance of `CharacterListViewModel` filled with predefined mock data for testing and debugging purposes
     static var mock: CharacterListViewModel {
         let mockModel = CharacterListViewModel()
         

@@ -17,8 +17,6 @@ struct CharacterList: View {
     /// The text that the user has typed to the search bar
     @State private var searchText = ""
     
-    let logger = Logger()
-    
     var body: some View {
         NavigationView {
             List {
@@ -44,7 +42,11 @@ struct CharacterList: View {
     }
     
     init(characterListVM: CharacterListViewModel? = nil) {
-        _characterListVM = StateObject(wrappedValue: CharacterListViewModel())
+        if let viewModel = characterListVM  {
+            _characterListVM = StateObject(wrappedValue: viewModel)
+        } else {
+            _characterListVM = StateObject(wrappedValue: CharacterListViewModel())
+        }
     }
 }
 
