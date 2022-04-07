@@ -17,10 +17,23 @@ struct CharacterList: View {
     /// The text that the user has typed to the search bar
     @State private var searchText = ""
     
+    /// The results matching the search string typed by the user
+    private var searchResults: Binding<[Character]> {
+        if searchText.isEmpty { // not searching yet, return all
+            return $characterListVM.characters
+        } else {
+            let result = characterListVM.characters.filter { $0.name.contains(searchText) }
+            
+            return Binding { // TODO: Not sure if I am doing it right
+                result
+            } set: { _ in }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach($characterListVM.characters, id: \.char_id) { character in
+                ForEach(searchResults, id: \.char_id) { character in
                     NavigationLink(destination: CharacterDetail(character: character))
                     {
                         CharacterCell(character: character)
