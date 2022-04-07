@@ -12,30 +12,45 @@ struct CharacterDetail: View {
     @Binding var character: Character
     
     var body: some View {
-        FancyScrollView(title: "\(character.name)", titleColor: .green, headerHeight: 300, scrollUpHeaderBehavior: .parallax, scrollDownHeaderBehavior: .offset) {
-            AsyncImage(url: URL(string: character.img)) { image in
-                    image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                ProgressView()
-            }
-        } content: {
-            VStack (alignment: .leading) {
-                Text("Nickname")
-                    .padding()
-                Text("\"\(character.nickname)\"")
-                    .padding()
-            }.frame(
-                maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .leading
-              )
-            .background(Color.green)
+        ZStack {
+            Color.green.ignoresSafeArea() // background color
+
+            FancyScrollView(title: "\(character.name)", titleColor: .green, headerHeight: 300, scrollUpHeaderBehavior: .parallax, scrollDownHeaderBehavior: .offset) {
+                AsyncImage(url: URL(string: character.img)) { image in
+                        image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    ProgressView()
+                }
+            } content: {
+                VStack (alignment: .leading, spacing: 10) {
+                    CharacterDetailSection(sectionTitle: "Nickname", sectionSFIconName: "person.text.rectangle.fill") {
+                        Text("\(character.nickname)")
+                    }
+                    CharacterDetailSection(sectionTitle: "Birthday", sectionSFIconName: "calendar") {
+                        Text("\(character.birthday)")
+                    }
+                    CharacterDetailSection(sectionTitle: "Occupations", sectionSFIconName: "briefcase.fill") {
+                        ForEach(character.occupation, id: \.self) { occupation in
+                            Text(occupation)
+                        }
+                    }
+                    CharacterDetailSection(sectionTitle: "Portrayed by", sectionSFIconName: "theatermasks.fill") {
+                        Text("\(character.portrayed)")
+                    }
+                    Spacer()
+                }.frame(
+                    maxWidth: .infinity,
+                    alignment: .leading
+                )
+                .background(Color.green)
         }
-        .backgroundViewModifier()
+        }
     }
 }
+
+
 
 struct CharacterDetail_Previews: PreviewProvider {
     @State static var mockChar = Character(char_id: 1,

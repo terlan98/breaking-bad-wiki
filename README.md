@@ -26,11 +26,11 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 
 | #  | Description                                                                         | Implemented | Fulfilled |
 |----|-------------------------------------------------------------------------------------|-------------|-----------|
-| 1  | Create at least 5±2 custom views                                                    |      ❌     |     ❌     |
+| 1  | Create at least 5±2 custom views                                                    |      ✅     |     ❌     |
 | 1a | Use the List view in at least one of the custom views                               |      ✅     |     ❌     |
 | 1b | Use AsyncImage in at least one of the custom views.                                 |      ✅     |     ❌     |
 | 1c | Import and display a custom font in at least one of the custom views                |      ✅     |     ❌     |
-| 2  | Include at least one asynchronous API call handled using async / await.             |      ❌     |     ❌     |
+| 2  | Include at least one asynchronous API call handled using async / await.             |      ✅     |     ❌     |
 | 2a | Handle network errors and display appropriate error messages.                       |      ❌     |     ❌     |
 | 3  | Use the MVVM pattern throughout your app.                                           |      ✅     |     ❌     |
 | 3a | Avoid business logic in your SwiftUI views.                                         |      ✅     |     ❌     |
@@ -38,9 +38,9 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 | 3c | Use at least one published property in a ViewModel.                                 |      ✅     |     ❌     |
 | 4  | Follow Apple's Human Interface Guidelines while creating the UI.                    |      ✅     |     ❌     |
 | 4a | Support Dark Mode.                                                                  |      ✅     |     ❌     |
-| 5  | Include at least one third-party package.                                           |      ❌     |     ❌     |
-| 5a | Ensure that you install the package of your choice using the Swift Package Manager. |      ❌     |     ❌     |
-| 6  | Use SF Symbols.                                                                     |      ❌     |     ❌     |
+| 5  | Include at least one third-party package.                                           |      ✅     |     ❌     |
+| 5a | Ensure that you install the package of your choice using the Swift Package Manager. |      ✅     |     ❌     |
+| 6  | Use SF Symbols.                                                                     |      ✅     |     ❌     |
 | 7  | Source code follows best practices, is readable, and easy to understand.            |      ❌     |     ❌     |
 | 7a | Follow coding guidelines.                                                           |      ❌     |     ❌     |
 | 7b | Comment your code inline.                                                           |      ❌     |     ❌     |

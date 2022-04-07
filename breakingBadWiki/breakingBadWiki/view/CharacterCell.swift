@@ -24,9 +24,9 @@ struct CharacterCell: View {
             
             VStack(alignment: .leading) {
                 Text(character.name)
-                    .font(Font.custom("Quicksand", size: 18).weight(.bold))
+                    .font(Font.custom(FontNames.DefaultBold.rawValue, size: 18).weight(.bold))
                 Text("\"\(character.nickname)\"")
-                    .font(Font.custom("Quicksand", size: 14))
+                    .font(Font.custom(FontNames.DefaultBold.rawValue, size: 14))
                     .foregroundColor(Color.secondary)
             }
             Spacer()

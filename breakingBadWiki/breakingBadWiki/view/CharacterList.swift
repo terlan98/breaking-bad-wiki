@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import OSLog
 
 // MARK: - CharacterList
-
 /// A view that shows the list of all `Character`s in the Breaking Bad TV series
 struct CharacterList: View {
     /// The model containing the characters
-    @EnvironmentObject var characterListVM: CharacterListViewModel
+    @StateObject var characterListVM: CharacterListViewModel
     
     /// The text that the user has typed to the search bar
     @State private var searchText = ""
+    
+    let logger = Logger()
     
     var body: some View {
         NavigationView {
@@ -32,17 +34,23 @@ struct CharacterList: View {
             .navigationTitle("Characters")
             .backgroundViewModifier()
         }
+        .task {
+            await characterListVM.fetchData()
+        }
+        .onAppear(){
+            // Changes the font of the navigation title
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: FontNames.DefaultBold.rawValue, size: 36)!]
+        }
     }
     
-    init() {
-            // Changes the font of the navigation title
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Quicksand-Bold", size: 36)!]
-        }
+    init(characterListVM: CharacterListViewModel? = nil) {
+        _characterListVM = StateObject(wrappedValue: CharacterListViewModel())
+    }
 }
 
 // MARK: - CharacterList Previews
 struct CharacterList_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterList().environmentObject(CharacterListViewModel.mock)
+        CharacterList(characterListVM: CharacterListViewModel.mock)
     }
 }

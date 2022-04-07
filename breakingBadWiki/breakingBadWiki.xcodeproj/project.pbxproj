@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6527004627FD7BD800289FF7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6527004527FD7BD800289FF7 /* Launch Screen.storyboard */; };
+		653E7EFA27FF0D14000D4C1E /* CharacterDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E7EF927FF0D14000D4C1E /* CharacterDetailSection.swift */; };
+		653E7EFD27FF1302000D4C1E /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E7EFC27FF1302000D4C1E /* FontNames.swift */; };
 		65746E7D27FD7F9E00C92DD4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E7C27FD7F9E00C92DD4 /* Character.swift */; };
 		65746E7F27FD805E00C92DD4 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E7E27FD805E00C92DD4 /* CharacterList.swift */; };
 		65746E8127FD810500C92DD4 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65746E8027FD810500C92DD4 /* CharacterListViewModel.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		6527004527FD7BD800289FF7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		653E7EF927FF0D14000D4C1E /* CharacterDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSection.swift; sourceTree = "<group>"; };
+		653E7EFC27FF1302000D4C1E /* FontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
 		65746E7C27FD7F9E00C92DD4 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		65746E7E27FD805E00C92DD4 /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 		65746E8027FD810500C92DD4 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		653E7EFB27FF12F3000D4C1E /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				653E7EFC27FF1302000D4C1E /* FontNames.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		65746E7927FD7E2200C92DD4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +85,7 @@
 				65746E7E27FD805E00C92DD4 /* CharacterList.swift */,
 				65746E8227FD945300C92DD4 /* CharacterCell.swift */,
 				65746E8727FDB60C00C92DD4 /* CharacterDetail.swift */,
+				653E7EF927FF0D14000D4C1E /* CharacterDetailSection.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 		65D00D8327FD77DB00F9BF98 /* breakingBadWiki */ = {
 			isa = PBXGroup;
 			children = (
+				653E7EFB27FF12F3000D4C1E /* helpers */,
 				65746E8E27FDBA7D00C92DD4 /* Info.plist */,
 				65746E8927FDB83700C92DD4 /* fonts */,
 				65746E7927FD7E2200C92DD4 /* model */,
@@ -218,7 +232,9 @@
 				65D00D8727FD77DB00F9BF98 /* ContentView.swift in Sources */,
 				65D00D8527FD77DB00F9BF98 /* breakingBadWikiApp.swift in Sources */,
 				65746E8327FD945300C92DD4 /* CharacterCell.swift in Sources */,
+				653E7EFD27FF1302000D4C1E /* FontNames.swift in Sources */,
 				65746E8127FD810500C92DD4 /* CharacterListViewModel.swift in Sources */,
+				653E7EFA27FF0D14000D4C1E /* CharacterDetailSection.swift in Sources */,
 				65746E8527FDA6E000C92DD4 /* BackgroundViewModifier.swift in Sources */,
 				65746E7F27FD805E00C92DD4 /* CharacterList.swift in Sources */,
 			);

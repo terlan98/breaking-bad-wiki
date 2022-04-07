@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CharacterList().environmentObject(CharacterListViewModel.mock)
+        CharacterList()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-            ContentView().environmentObject(CharacterListViewModel.mock).colorScheme(colorScheme)
+            ContentView().colorScheme(colorScheme)
         }
     }
 }
