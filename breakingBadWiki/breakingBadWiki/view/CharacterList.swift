@@ -32,18 +32,24 @@ struct CharacterList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(searchResults, id: \.char_id) { character in
-                    NavigationLink(destination: CharacterDetail(character: character))
-                    {
-                        CharacterCell(character: character)
+            if characterListVM.characters.isEmpty { // couldn't fetch, show error
+                ErrorView(title: "Couldn't fetch data", message: "Please check your network connection")
+                    .navigationTitle("Characters")
+            } // fetched successfully, show data
+            else {
+                List {
+                    ForEach(searchResults, id: \.char_id) { character in
+                        NavigationLink(destination: CharacterDetail(character: character))
+                        {
+                            CharacterCell(character: character)
+                        }
+                        .listRowBackground(Color("GreenBackgroundColor"))
                     }
-                    .listRowBackground(Color.green.opacity(0.3))
                 }
+                .searchable(text: $searchText)
+                .navigationTitle("Characters")
+                .backgroundViewModifier()
             }
-            .searchable(text: $searchText)
-            .navigationTitle("Characters")
-            .backgroundViewModifier()
         }
         .task {
             await characterListVM.fetchData()
@@ -54,6 +60,7 @@ struct CharacterList: View {
         }
     }
     
+    /// Initializes this view using a `CharacterListViewModel`. Creates a new instance of `CharacterListViewModel` if the parameter is skipped.
     init(characterListVM: CharacterListViewModel? = nil) {
         if let viewModel = characterListVM  {
             _characterListVM = StateObject(wrappedValue: viewModel)

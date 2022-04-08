@@ -31,7 +31,7 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 | 1b | Use AsyncImage in at least one of the custom views.                                 |      ✅     |     ❌     |
 | 1c | Import and display a custom font in at least one of the custom views                |      ✅     |     ❌     |
 | 2  | Include at least one asynchronous API call handled using async / await.             |      ✅     |     ❌     |
-| 2a | Handle network errors and display appropriate error messages.                       |      ❌     |     ❌     |
+| 2a | Handle network errors and display appropriate error messages.                       |      ✅     |     ❌     |
 | 3  | Use the MVVM pattern throughout your app.                                           |      ✅     |     ❌     |
 | 3a | Avoid business logic in your SwiftUI views.                                         |      ✅     |     ❌     |
 | 3b | Use appropriate property wrappers in your views.                                    |      ✅     |     ❌     |
@@ -41,11 +41,11 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 | 5  | Include at least one third-party package.                                           |      ✅     |     ❌     |
 | 5a | Ensure that you install the package of your choice using the Swift Package Manager. |      ✅     |     ❌     |
 | 6  | Use SF Symbols.                                                                     |      ✅     |     ❌     |
-| 7  | Source code follows best practices, is readable, and easy to understand.            |      ❌     |     ❌     |
-| 7a | Follow coding guidelines.                                                           |      ❌     |     ❌     |
+| 7  | Source code follows best practices, is readable, and easy to understand.            |      ✅     |     ❌     |
+| 7a | Follow coding guidelines.                                                           |      ✅     |     ❌     |
 | 7b | Comment your code inline.                                                           |      ❌     |     ❌     |
 | 7c | Document your code.                                                                 |      ❌     |     ❌     |
-| 7d | Use Apple's Logger throughout your app.                                             |      ❌     |     ❌     |
+| 7d | Use Apple's Logger throughout your app.                                             |      ✅     |     ❌     |
 
 
 ## Documentation

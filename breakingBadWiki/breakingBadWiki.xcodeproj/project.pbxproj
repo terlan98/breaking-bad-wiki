@@ -22,6 +22,7 @@
 		65D00D8727FD77DB00F9BF98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D00D8627FD77DB00F9BF98 /* ContentView.swift */; };
 		65D00D8927FD77DD00F9BF98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D00D8827FD77DD00F9BF98 /* Assets.xcassets */; };
 		65D00D8C27FD77DD00F9BF98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D00D8B27FD77DD00F9BF98 /* Preview Assets.xcassets */; };
+		65DFE65128001BE2004072F0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DFE65028001BE2004072F0 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		65D00D8627FD77DB00F9BF98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65D00D8827FD77DD00F9BF98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65D00D8B27FD77DD00F9BF98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		65DFE65028001BE2004072F0 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				65746E8227FD945300C92DD4 /* CharacterCell.swift */,
 				65746E8727FDB60C00C92DD4 /* CharacterDetail.swift */,
 				653E7EF927FF0D14000D4C1E /* CharacterDetailSection.swift */,
+				65DFE65028001BE2004072F0 /* ErrorView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				653E7EFA27FF0D14000D4C1E /* CharacterDetailSection.swift in Sources */,
 				65746E8527FDA6E000C92DD4 /* BackgroundViewModifier.swift in Sources */,
 				65746E7F27FD805E00C92DD4 /* CharacterList.swift in Sources */,
+				65DFE65128001BE2004072F0 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
