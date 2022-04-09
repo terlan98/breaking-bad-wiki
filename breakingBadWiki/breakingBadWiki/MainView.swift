@@ -7,16 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+// MARK: - MainView
+/// The entry point of the app
+struct MainView: View {
     var body: some View {
         CharacterList()
     }
 }
 
+// MARK: - MainView Previews
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-            ContentView().colorScheme(colorScheme)
+            MainView().colorScheme(colorScheme)
         }
     }
 }

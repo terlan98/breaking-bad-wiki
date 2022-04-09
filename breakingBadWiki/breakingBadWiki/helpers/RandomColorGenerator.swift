@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - RandomColorGenerator
+/// Generates a random `Color`
 struct RandomColorGenerator {
     private static let colors = [
         Color.orange,

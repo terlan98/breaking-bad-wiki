@@ -15,8 +15,13 @@
         }
       ],
       "color" : {
-        "platform" : "universal",
-        "reference" : "systemGreenColor"
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.334",
+          "green" : "0.663",
+          "red" : "0.331"
+        }
       },
       "idiom" : "universal"
     }

@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+// MARK: - ErrorView
+/// A view intended for displaying error messages with a title and an image of Walter White
 struct ErrorView: View {
     
+    /// The title of the error message
     var title: String
+    /// The error message itself
     var message: String
     
     var body: some View {
@@ -37,6 +41,7 @@ struct ErrorView: View {
     }
 }
 
+// MARK: - ErrorView Previews
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorView(title: "Error title", message: "An error occurred. See what you can do about it")

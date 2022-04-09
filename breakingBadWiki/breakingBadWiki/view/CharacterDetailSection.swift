@@ -8,13 +8,18 @@
 import SwiftUI
 import FancyScrollView
 
+// MARK: - CharacterDetailSection
+/// A `View` intended for showing a single property of a `Character`
 struct CharacterDetailSection<Content: View>: View {
     
+    /// The title (property name) of this section
     var sectionTitle: String
+    /// The name of an SF Symbol to be shown before the title
     var sectionSFIconName: String?
+    /// The content to be shown under the title
     var content: Content
     
-    /// Initializes a new instance of `CharacterDetailSection` with the given title and content
+    /// Initializes a new instance of `CharacterDetailSection` with the given title and content. Can optionally accept an SF Symbol name.
     init(sectionTitle: String, sectionSFIconName: String? = nil, @ViewBuilder content: () -> Content) {
         self.content = content()
         self.sectionTitle = sectionTitle
@@ -43,6 +48,7 @@ struct CharacterDetailSection<Content: View>: View {
     }
 }
 
+// MARK: - CharacterDetailSection Previews
 struct CharacterDetailSection_Previews: PreviewProvider {
     static var previews: some View {
         VStack (alignment: .leading) {

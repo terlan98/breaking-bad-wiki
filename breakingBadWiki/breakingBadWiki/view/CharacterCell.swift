@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+// MARK: - CharacterCell
+/// A list cell representing a single `Character`
 struct CharacterCell: View {
+    /// The model to read the data from
     @Binding var character: Character
     
     var body: some View {
@@ -35,6 +38,7 @@ struct CharacterCell: View {
     }
 }
 
+// MARK: - CharacterCell Previews
 struct CharacterCell_Previews: PreviewProvider {
     @State static var mockChar = Character(char_id: 1,
                   name: "Walter White",

@@ -8,14 +8,19 @@
 import SwiftUI
 import FancyScrollView
 
+// MARK: - CharacterDetail
+/// Detail `View` for a single `Character`
 struct CharacterDetail: View {
+    /// The model to read from
     @Binding var character: Character
     
     var body: some View {
-        ZStack {
-            Color.green.ignoresSafeArea() // background color
+        let color = Color("OpaqueGreenBackgroundColor")
+        
+        ZStack { // color + FancyScrollView
+            color.ignoresSafeArea() // background color
 
-            FancyScrollView(title: "\(character.name)", titleColor: .green, headerHeight: 300, scrollUpHeaderBehavior: .parallax, scrollDownHeaderBehavior: .offset) {
+            FancyScrollView(title: "\(character.name)", titleColor: color, headerHeight: 300, scrollUpHeaderBehavior: .parallax, scrollDownHeaderBehavior: .offset) {
                 AsyncImage(url: URL(string: character.img)) { image in
                         image
                         .resizable()
@@ -35,7 +40,7 @@ struct CharacterDetail: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 5) {
                                 ForEach(character.occupation, id: \.self) { occupation in
-                                    RoundedTextView(text: occupation, backgroundColor: RandomColorGenerator.generate())
+                                    RoundedTextView(text: occupation, backgroundColor: RandomColorGenerator.generate(), textColor: Color("TextColor"))
                                 }
                             }
                         }
@@ -48,14 +53,13 @@ struct CharacterDetail: View {
                     maxWidth: .infinity,
                     alignment: .leading
                 )
-                .background(Color.green)
-        }
+                .background(color)
+            }
         }
     }
 }
 
-
-
+// MARK: - CharacterDetail Previews
 struct CharacterDetail_Previews: PreviewProvider {
     @State static var mockChar = Character(char_id: 1,
                   name: "Walter White",
