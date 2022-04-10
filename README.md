@@ -43,103 +43,120 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 | 6  | Use SF Symbols.                                                                     |      ✅     |     ❌     |
 | 7  | Source code follows best practices, is readable, and easy to understand.            |      ✅     |     ❌     |
 | 7a | Follow coding guidelines.                                                           |      ✅     |     ❌     |
-| 7b | Comment your code inline.                                                           |      ❌     |     ❌     |
-| 7c | Document your code.                                                                 |      ❌     |     ❌     |
+| 7b | Comment your code inline.                                                           |      ✅     |     ❌     |
+| 7c | Document your code.                                                                 |      ✅     |     ❌     |
 | 7d | Use Apple's Logger throughout your app.                                             |      ✅     |     ❌     |
 
 
 ## Documentation
 
-> Make sure to remove all *TODO*s before you submit your app for review.
-
 ### Features
 
-> TODO: Introduce the most important features of your app in 1-3 paragraphs on a user-level.
+> This is an app that shows a list of Breaking Bad characters and details about them. There is also a search functionality that allows the user to search for the name of a character. 
+> All data is fetched from the Breaking Bad API (https://breakingbadapi.com/).
 
 ### Screens
 
-> TODO: Describe the functionality of each of the screens in your app.
+> **List Screen**
+> ![](/images/list.png)
+> Shows a list of characters, offers search functionality
+> **Detail Screen**
+> ![](/images/detail.png)
+> Shows information about a single Breaking Bad character
 
 ### Requirements
 
-> Describe how you implemented each of the requirements briefly in 1-3 sentences, depending on the complexity.
-
 #### 1) Create at least 5±2 custom views created
 
-> TODO
+> I have created a `CharacterList` view that uses `CharacterCell`s to display an image of each character followed by its name and nickname. Tapping on one of the cells opens a `CharacterDetail` view which, uses a third-party package (*FancyScrollView*) to display an image of the character and several `CharacterDetailSection`s, each showing a single piece of information (birthday, occupations, etc.). The occupation section uses another custom view that I have created (`RoundedTextView`). 
+> 
+> If an error prevents fetching the list of characters from the API, an `ErrorView` is shown to inform the user.
 
 #### 1a) Use the List view in at least one of the custom views
 
-> TODO
+> The List view is used inside `CharacterList`
 
 #### 1b) Use AsyncImage in at least one of the custom views.
 
-> TODO
+> AsyncImage is used inside `CharacterCell` and `CharacterDetail` to show character images
 
 #### 1c) Import and display a custom font in at least one of the custom views.
 
-> TODO
+> I have imported a font called *Quicksand* with the following steps:
+> 1. Added the .ttf file of the font to a folder named `fonts`
+> 2. Added a "Fonts provided by the application" key, containing the name of the font file, to the Info tab of the project target
+> 3. Started using the font throughout the app by calling the Font.custom(...) function
+
+> Note: I have also created a `FontNames` enum to save the name of the default font (Quicksand) and access it from other structs and views. 
 
 #### 2) Include at least one asynchronous API call handled using async / await.
 
-> TODO
+> The `fetchData()` function inside `CharacterListViewModel` is an asynchronous function that makes an API call to fetch the list of characters. This function is called inside `CharacterList`.
 
 #### 2a) Handle network errors and display appropriate error messages.
 
-> TODO
+> If, for some reason, the list of characters can't be fetched, the application shows an `ErrorView` instead of the list of characters to inform the user:
+> ![](/images/error.png)
 
 #### 3) Use the MVVM pattern throughout your app.
 
-> TODO
+> The list of characters and the logic for fetching them from the API is inside the `CharacterListViewModel`.
 
 #### 3a) Avoid business logic in your SwiftUI views.
 
-> TODO
+> Done
 
 #### 3b) Use appropriate property wrappers in your views.
 
-> TODO
+> I have used `@Published`, `@State`, `@StateObject`, and `@Binding` wrappers.
 
 #### 3c) Use at least one published property in a ViewModel.
 
-> TODO
+> `CharacterListViewModel` contains a `@Published` property
 
 #### 4) Follow Apple's Human Interface Guidelines while creating the UI.
 
-> TODO
+> I have read and did my best to align my app with Apple's Human Interface Guidelines (https://developer.apple.com/design/human-interface-guidelines/)
 
 #### 4a) Support Dark Mode.
 
-> TODO
+> All views support dark mode:
+> 
+> **List Screen**
+> ![](images/list_dark.png)
+> **Detail Screen**
+> ![](images/detail_dark.png)
+> **List Screen (with error)**
+> ![](images/error_dark.png)
 
 #### 5) Include at least one third-party package.
 
-> TODO
+> I have used a package called FancyScrollView. You can find more about it [here](https://github.com/nerdsupremacist/FancyScrollView)
 
 #### 5a) Ensure that you install the package of your choice using the Swift Package Manager.
 
-> TODO
+> I have used File -> Add Packages menu in Xcode 13 to install the package.
 
 #### 6) Use SF Symbols.
 
-> TODO
+> `CharacterDetail` screen includes several `CharacterDetailSection`s with various SF Symbols each describing a section.
 
 #### 7) Source code follows best practices, is readable, and easy to understand.
 
-> TODO
+> I ensured this by following the following guide: [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/)
 
 #### 7a) Follow coding guidelines.
 
-> TODO
+> Done
 
 #### 7b) Comment your code inline.
 
-> TODO
+> All swift files contain comments
 
 #### 7c) Document your code.
 
-> TODO
+> The repository contains a descriptive README file
 
 #### 7d) Use Apple's Logger throughout your app.
 
-> TODO
+> I have used Logger in the `CharacterListViewModel` to log some information regarding the process of fetching data from the API. 
