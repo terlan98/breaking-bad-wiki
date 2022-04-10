@@ -58,10 +58,10 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 ### Screens
 
 > **List Screen**\
-> ![](images/list.png){height=30% width=30%}\
+> ![](images/list.png){height=25% width=25%}\
 > Shows a list of characters, offers search functionality\
 > **Detail Screen**\
-> ![](images/detail.png){height=50% width=50%}\
+> ![](images/detail.png){height=25% width=25%}\
 > Shows information about a single Breaking Bad character
 
 ### Requirements
@@ -96,7 +96,7 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 #### 2a) Handle network errors and display appropriate error messages.
 
 > If, for some reason, the list of characters can't be fetched, the application shows an `ErrorView` instead of the list of characters to inform the user:
-> ![](images/error.png){height=50% width=50%}\
+> ![](images/error.png){height=25% width=25%}\
 
 #### 3) Use the MVVM pattern throughout your app.
 
@@ -123,11 +123,11 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 > All views support dark mode:
 > 
 > **List Screen**\
-> ![](images/list_dark.png){height=50% width=50%}\
+> ![](images/list_dark.png){height=25% width=25%}\
 > **Detail Screen**\
-> ![](images/detail_dark.png){height=50% width=50%}\
+> ![](images/detail_dark.png){height=25% width=25%}\
 > **List Screen (with error)**\
-> ![](images/error_dark.png){height=50% width=50%}
+> ![](images/error_dark.png){height=25% width=25%}
 
 #### 5) Include at least one third-party package.
 
