@@ -17,16 +17,21 @@ struct CharacterList: View {
     /// The text that the user has typed to the search bar
     @State private var searchText = ""
     
-    /// The results matching the search string typed by the user
-    private var searchResults: Binding<[Character]> {
-        if searchText.isEmpty { // not searching yet, return all
-            return $characterListVM.characters
+    /// Initializes this view using a `CharacterListViewModel`. Creates a new instance of `CharacterListViewModel` if the parameter is skipped.
+    init(characterListVM: CharacterListViewModel? = nil) {
+        if let viewModel = characterListVM  {
+            _characterListVM = StateObject(wrappedValue: viewModel)
         } else {
-            let result = characterListVM.characters.filter { $0.name.contains(searchText) }
-            
-            return Binding { // TODO: Not sure if I am doing it right
-                result
-            } set: { _ in }
+            _characterListVM = StateObject(wrappedValue: CharacterListViewModel())
+        }
+    }
+    
+    /// The results matching the search string typed by the user
+    private var searchResults: [Character] {
+        if searchText.isEmpty { // not searching yet, return all
+            return characterListVM.characters
+        } else {
+            return characterListVM.characters.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -39,9 +44,9 @@ struct CharacterList: View {
             else {
                 List {
                     ForEach(searchResults, id: \.char_id) { character in
-                        NavigationLink(destination: CharacterDetail(character: character))
+                        NavigationLink(destination: CharacterDetail(character: Binding.constant(character)))
                         {
-                            CharacterCell(character: character)
+                            CharacterCell(character: Binding.constant(character))
                         }
                         .listRowBackground(Color("GreenBackgroundColor"))
                     }
@@ -57,15 +62,6 @@ struct CharacterList: View {
         .onAppear(){
             // Changes the font of the navigation title
             UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: FontNames.DefaultBold.rawValue, size: 36)!]
-        }
-    }
-    
-    /// Initializes this view using a `CharacterListViewModel`. Creates a new instance of `CharacterListViewModel` if the parameter is skipped.
-    init(characterListVM: CharacterListViewModel? = nil) {
-        if let viewModel = characterListVM  {
-            _characterListVM = StateObject(wrappedValue: viewModel)
-        } else {
-            _characterListVM = StateObject(wrappedValue: CharacterListViewModel())
         }
     }
 }
