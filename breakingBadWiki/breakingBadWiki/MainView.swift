@@ -10,8 +10,19 @@ import SwiftUI
 // MARK: - MainView
 /// The entry point of the app
 struct MainView: View {
+    
     var body: some View {
-        CharacterList()
+        TabView {
+            CharacterList()
+                .tabItem {
+                    Label("Characters", systemImage: "person.crop.rectangle.stack.fill")
+                }
+            FavoriteCarousel()
+                .tabItem {
+                    Label("Favorites", systemImage: "star")
+                }
+        }
+        .backgroundViewModifier()
     }
 }
 

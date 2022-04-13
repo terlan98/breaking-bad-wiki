@@ -14,6 +14,12 @@ struct CharacterDetail: View {
     /// The model to read from
     @Binding var character: Character
     
+    /// The model used for handling user's favorite characters
+    @StateObject private var favCharacterListVM = FavoriteCharacterListViewModel()
+    
+    /// The name of the icon used for the button that adds/removes favorites
+    @State var favButtonIconName = FavoriteButtonState.notFavorite.rawValue
+    
     var body: some View {
         let color = Color("OpaqueGreenBackgroundColor")
         
@@ -30,8 +36,26 @@ struct CharacterDetail: View {
                 }
             } content: {
                 VStack (alignment: .leading, spacing: 10) {
-                    CharacterDetailSection(sectionTitle: "Nickname", sectionSFIconName: "person.text.rectangle.fill") {
-                        Text("\(character.nickname)")
+                    HStack {
+                        CharacterDetailSection(sectionTitle: "Nickname", sectionSFIconName: "person.text.rectangle.fill") {
+                            Text("\(character.nickname)")
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            if favButtonIconName == FavoriteButtonState.notFavorite.rawValue {
+                                favCharacterListVM.addCharacter(favChar: FavoriteCharacter(character: character))
+                            }
+                            else {
+                                favCharacterListVM.removeCharacter(favChar: FavoriteCharacter(character: character))
+                            }
+                            updateFavoriteButtonIcon()
+                        } label: {
+                            Image(systemName: favButtonIconName)
+                        }
+                        .favoriteButtonModifier()
+                        .padding([.top, .trailing], 8)
                     }
                     CharacterDetailSection(sectionTitle: "Birthday", sectionSFIconName: "calendar") {
                         Text("\(character.birthday)")
@@ -56,8 +80,23 @@ struct CharacterDetail: View {
                 .background(color)
             }
         }
+        .onAppear {
+            updateFavoriteButtonIcon()
+        }
+    }
+    
+    /// Updates the icon of the favorite add/remove button based on a `FavoriteCharacterListViewModel`
+    func updateFavoriteButtonIcon() {
+        favButtonIconName = favCharacterListVM.isFavorite(favChar: FavoriteCharacter(character: character)) ? FavoriteButtonState.Favorite.rawValue : FavoriteButtonState.notFavorite.rawValue
     }
 }
+
+/// Indicates the current state of the favorite add/remove button
+enum FavoriteButtonState: String {
+    case notFavorite = "star"
+    case Favorite = "star.fill"
+}
+
 
 // MARK: - CharacterDetail Previews
 struct CharacterDetail_Previews: PreviewProvider {
