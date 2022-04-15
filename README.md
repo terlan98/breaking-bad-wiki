@@ -32,7 +32,7 @@ After verifying that you implemented each of them, put a ✅ into the *Implement
 | 1c | Import and display a custom font in at least one of the custom views                |      ✅     |     ✅     |
 | 2  | Include at least one asynchronous API call handled using async / await.             |      ✅     |     ✅     |
 | 2a | Handle network errors and display appropriate error messages.                       |      ✅     |     ✅     |
-| 3  | Use the MVVM pattern throughout your app.                                           |      ✅     |     ✅     |
+| 3  | Use the MVVM pattern throughout your app.                                           |      ✅     |     ❌     |
 | 3a | Avoid business logic in your SwiftUI views.                                         |      ✅     |     ✅     |
 | 3b | Use appropriate property wrappers in your views.                                    |      ✅     |     ✅     |
 | 3c | Use at least one published property in a ViewModel.                                 |      ✅     |     ✅     |
