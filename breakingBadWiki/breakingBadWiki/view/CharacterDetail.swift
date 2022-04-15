@@ -64,7 +64,7 @@ struct CharacterDetail: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack (spacing: 5) {
                                 ForEach(character.occupation, id: \.self) { occupation in
-                                    RoundedTextView(text: occupation, backgroundColor: RandomColorGenerator.generate(), textColor: Color("TextColor"))
+                                    RoundedTextView(text: occupation, backgroundColor: ColorGenerator.generate(for: occupation), textColor: Color("TextColor"))
                                 }
                             }
                         }

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// MARK: - RandomColorGenerator
-/// Generates a random `Color`
-struct RandomColorGenerator {
+// MARK: - ColorGenerator
+/// Generates `Color`s
+struct ColorGenerator {
     private static let colors = [
         Color.orange,
         Color.teal,
@@ -19,7 +19,8 @@ struct RandomColorGenerator {
         Color.purple,
     ]
     
-    static func generate() -> Color {
-        return colors.randomElement()!
+    /// Generates a color based on the hash of the given string
+    static func generate(for string: String) -> Color {
+        return colors[abs(string.hashValue) % colors.count]
     }
 }
