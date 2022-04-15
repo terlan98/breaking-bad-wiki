@@ -11,6 +11,9 @@ import SwiftUI
 /// The entry point of the app
 struct MainView: View {
     
+    /// The model containing favorite characters
+    @StateObject var favCharacterListVM = FavoriteCharacterListViewModel()
+    
     var body: some View {
         TabView {
             CharacterList()
@@ -22,6 +25,7 @@ struct MainView: View {
                     Label("Favorites", systemImage: "star")
                 }
         }
+        .environmentObject(favCharacterListVM)
         .backgroundViewModifier()
     }
 }
@@ -30,7 +34,7 @@ struct MainView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-            MainView().colorScheme(colorScheme)
+            MainView(favCharacterListVM: FavoriteCharacterListViewModel()).colorScheme(colorScheme)
         }
     }
 }

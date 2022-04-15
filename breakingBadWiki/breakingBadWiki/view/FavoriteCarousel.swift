@@ -13,16 +13,9 @@ import ACarousel
 struct FavoriteCarousel: View {
     
     /// The model used for handling user's favorite characters
-    @StateObject var favCharacterListVM: FavoriteCharacterListViewModel
+    @EnvironmentObject var favCharacterListVM: FavoriteCharacterListViewModel
     
-    /// Initializes this view using a `FavoriteCharacterListViewModel`. Creates a new instance of `FavoriteCharacterListViewModel` if the parameter is skipped.
-    init(characterListVM: FavoriteCharacterListViewModel? = nil) {
-        if let viewModel = characterListVM  {
-            _favCharacterListVM = StateObject(wrappedValue: viewModel)
-        } else {
-            _favCharacterListVM = StateObject(wrappedValue: FavoriteCharacterListViewModel())
-        }
-    }
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         NavigationView {
@@ -51,10 +44,11 @@ struct FavoriteCarousel: View {
 struct FavoriteList_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            FavoriteCarousel(characterListVM: FavoriteCharacterListViewModel.mock)
+            FavoriteCarousel()
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
+                .environmentObject(FavoriteCharacterListViewModel.mock)
         }
         .backgroundViewModifier()
     }

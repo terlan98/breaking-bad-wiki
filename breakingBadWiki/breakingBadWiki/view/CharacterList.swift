@@ -14,6 +14,9 @@ struct CharacterList: View {
     /// The model containing the characters
     @StateObject var characterListVM: CharacterListViewModel
     
+    /// The model used for handling user's favorite characters
+    @EnvironmentObject var favCharacterListVM: FavoriteCharacterListViewModel
+    
     /// The text that the user has typed to the search bar
     @State private var searchText = ""
     
@@ -44,7 +47,7 @@ struct CharacterList: View {
             else {
                 List {
                     ForEach(searchResults, id: \.charId) { character in
-                        NavigationLink(destination: CharacterDetail(character: Binding.constant(character)))
+                        NavigationLink(destination: CharacterDetail(character: Binding.constant(character)).environmentObject(favCharacterListVM))
                         {
                             CharacterCell(character: Binding.constant(character))
                         }

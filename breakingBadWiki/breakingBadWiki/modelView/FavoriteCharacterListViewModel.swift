@@ -42,10 +42,8 @@ class FavoriteCharacterListViewModel: ObservableObject {
         logger.info("Favorite Characters were saved into UserDefaults")
     }
     
-    /// Adds a new `FavoriteCharacter` into the set of `FavoriteCharacter`s. Triggers fetch and persist operations.
+    /// Adds a new `FavoriteCharacter` into the set of `FavoriteCharacter`s. Triggers the persist operation.
     func addCharacter(favChar: FavoriteCharacter) {
-        fetchData()
-        
         if characters.contains(where: { favChar.id == $0.id }) { // avoid adding an existing character
             logger.warning("Attempted to add an existing character named \(favChar.name)")
             return
@@ -70,7 +68,6 @@ class FavoriteCharacterListViewModel: ObservableObject {
     
     /// Checks whether the given `FavoriteCharacter` is in the set of user's `FavoriteCharacter`s. Triggers a fetch operation.
     func isFavorite(favChar: FavoriteCharacter) -> Bool {
-        fetchData()
         return characters.contains { existingFavChar in
             existingFavChar.id == favChar.id
         }

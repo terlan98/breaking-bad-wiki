@@ -15,7 +15,7 @@ struct CharacterDetail: View {
     @Binding var character: Character
     
     /// The model used for handling user's favorite characters
-    @StateObject private var favCharacterListVM = FavoriteCharacterListViewModel()
+    @EnvironmentObject private var favCharacterListVM: FavoriteCharacterListViewModel
     
     /// The name of the icon used for the button that adds/removes favorites
     @State var favButtonIconName = FavoriteButtonState.notFavorite.rawValue
@@ -109,6 +109,6 @@ struct CharacterDetail_Previews: PreviewProvider {
                   portrayedBy: "Bryan Cranston")
     
     static var previews: some View {
-        CharacterDetail(character: $mockChar)
+        CharacterDetail(character: $mockChar).environmentObject(FavoriteCharacterListViewModel())
     }
 }
