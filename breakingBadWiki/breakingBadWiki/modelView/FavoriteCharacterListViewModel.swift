@@ -11,7 +11,7 @@ import OSLog
 // MARK: - FavoriteCharacterListViewModel
 class FavoriteCharacterListViewModel: ObservableObject {
     /// The list of `FavoriteCharacter`s selected by the user
-    @Published private(set) var characters = Set<FavoriteCharacter>()
+    @Published private(set) var characters : [FavoriteCharacter] = []
     
     /// Logs information about the contents of the view model
     let logger = Logger()
@@ -23,7 +23,7 @@ class FavoriteCharacterListViewModel: ObservableObject {
     func fetchData() {
         if let data = UserDefaults.standard.object(forKey: userDefaultsKey) as? Data {
             let decoder = JSONDecoder()
-            if let savedFavoriteCharacters = try? decoder.decode(Set<FavoriteCharacter>.self, from: data) {
+            if let savedFavoriteCharacters = try? decoder.decode([FavoriteCharacter].self, from: data) {
                 characters = savedFavoriteCharacters
             }
         }
@@ -45,7 +45,13 @@ class FavoriteCharacterListViewModel: ObservableObject {
     /// Adds a new `FavoriteCharacter` into the set of `FavoriteCharacter`s. Triggers fetch and persist operations.
     func addCharacter(favChar: FavoriteCharacter) {
         fetchData()
-        characters.insert(favChar)
+        
+        if characters.contains(where: { favChar.id == $0.id }) { // avoid adding an existing character
+            logger.warning("Attempted to add an existing character named \(favChar.name)")
+            return
+        }
+        
+        characters.append(favChar)
         persistData()
         
         logger.info("\(favChar.name) added as favorite")
@@ -55,7 +61,7 @@ class FavoriteCharacterListViewModel: ObservableObject {
     /// Removes the specified `FavoriteCharacter` from the set of `FavoriteCharacter`s. Triggers fetch and persist operations.
     func removeCharacter(favChar: FavoriteCharacter) {
         fetchData()
-        characters.remove(favChar)
+        characters.removeAll(where: { favChar.id == $0.id })
         persistData()
         
         logger.info("\(favChar.name) removed from favorites")
