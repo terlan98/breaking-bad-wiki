@@ -11,7 +11,7 @@ import Foundation
 /// Represents a Breaking Bad character.
 struct Character: Codable {
     /// The stable identity of the entity associated with self
-    let char_id: Int
+    let charId: Int
     
     /// The name of the character
     let name: String
@@ -29,5 +29,15 @@ struct Character: Codable {
     let img: String
     
     /// Name of the actor portraying this character
-    let portrayed: String
+    let portrayedBy: String
+    
+    enum CodingKeys: String, CodingKey {
+        case charId = "char_id"
+        case name
+        case nickname
+        case birthday
+        case occupation
+        case img
+        case portrayedBy = "portrayed"
+    }
 }

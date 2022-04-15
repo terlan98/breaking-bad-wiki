@@ -70,7 +70,7 @@ struct CharacterDetail: View {
                         }
                     }
                     CharacterDetailSection(sectionTitle: "Portrayed by", sectionSFIconName: "theatermasks.fill") {
-                        Text("\(character.portrayed)")
+                        Text("\(character.portrayedBy)")
                     }
                     Spacer()
                 }.frame(
@@ -100,13 +100,13 @@ enum FavoriteButtonState: String {
 
 // MARK: - CharacterDetail Previews
 struct CharacterDetail_Previews: PreviewProvider {
-    @State static var mockChar = Character(char_id: 1,
+    @State static var mockChar = Character(charId: 1,
                   name: "Walter White",
                   nickname: "Heisenberg",
                   birthday: "09-07-1958",
                   occupation: ["Chemistry Teacher", "Meth King Pin", "Doctor", "Another Occupation"],
                   img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
-                  portrayed: "Bryan Cranston")
+                  portrayedBy: "Bryan Cranston")
     
     static var previews: some View {
         CharacterDetail(character: $mockChar)

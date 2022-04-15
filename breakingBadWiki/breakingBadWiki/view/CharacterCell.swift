@@ -40,13 +40,13 @@ struct CharacterCell: View {
 
 // MARK: - CharacterCell Previews
 struct CharacterCell_Previews: PreviewProvider {
-    @State static var mockChar = Character(char_id: 1,
+    @State static var mockChar = Character(charId: 1,
                   name: "Walter White",
                   nickname: "Heisenberg",
                   birthday: "09-07-1958",
                   occupation: ["High School Chemistry Teacher", "Meth King Pin"],
                   img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
-                  portrayed: "Bryan Cranston")
+                  portrayedBy: "Bryan Cranston")
     
     static var previews: some View {
         List {

@@ -33,24 +33,24 @@ struct FavoriteCharacter {
     
     /// Creates an instace of `FavoriteCharacter` based on a `Character` instance
     init(character: Character) {
-        self.id = character.char_id
+        self.id = character.charId
         self.name = character.name
         self.nickname = character.nickname
         self.birthday = character.birthday
         self.occupation = character.occupation
         self.imgURL = character.img
-        self.portrayedBy = character.portrayed
+        self.portrayedBy = character.portrayedBy
     }
     
     /// Converts this instance of `FavoriteCharacter` into a `Character`
     func asCharacter() -> Character {
-        return Character(char_id: self.id,
+        return Character(charId: self.id,
                          name: self.name,
                          nickname: self.nickname,
                          birthday: self.birthday,
                          occupation: self.occupation,
                          img: self.imgURL,
-                         portrayed: self.portrayedBy)
+                         portrayedBy: self.portrayedBy)
     }
 }
 

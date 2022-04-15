@@ -43,7 +43,7 @@ struct CharacterList: View {
             } // fetched successfully, show data
             else {
                 List {
-                    ForEach(searchResults, id: \.char_id) { character in
+                    ForEach(searchResults, id: \.charId) { character in
                         NavigationLink(destination: CharacterDetail(character: Binding.constant(character)))
                         {
                             CharacterCell(character: Binding.constant(character))
