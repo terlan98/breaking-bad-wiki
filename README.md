@@ -41,7 +41,7 @@ This app is made for the introductory part of the iPraktikum course at Technical
 ### Screens
 
 > **List Screen**\
-> ![](images/list.png =320x568)\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/list.png?raw=true" width=25% height=25%>\
 > Shows a list of characters, offers search functionality\
 > **Favorites Screen**\
 > ![](images/fav.png){height=25% width=25%}\
