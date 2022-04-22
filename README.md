@@ -44,10 +44,10 @@ This app is made for the introductory part of the iPraktikum course at Technical
 > <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/list.png?raw=true" width=25% height=25%>\
 > Shows a list of characters, offers search functionality\
 > **Favorites Screen**\
-> ![](images/fav.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/fav.png?raw=true" width=25% height=25%>\
 > Shows a carousel view of user's favorite characters\
 > **Detail Screen**\
-> ![](images/detail.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/detail.png?raw=true" width=25% height=25%>\
 > Shows information about a single Breaking Bad character
 
 ### Requirements
@@ -82,7 +82,7 @@ This app is made for the introductory part of the iPraktikum course at Technical
 #### 2a) Handle network errors and display appropriate error messages.
 
 > If, for some reason, the list of characters can't be fetched, the application shows an `ErrorView` instead of the list of characters to inform the user:
-> ![](images/error.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/error.png?raw=true" width=25% height=25%>\
 
 #### 3) Use the MVVM pattern throughout your app.
 
