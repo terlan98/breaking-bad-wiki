@@ -81,7 +81,7 @@ This app is made for the introductory part of the iPraktikum course at Technical
 
 #### 2a) Handle network errors and display appropriate error messages.
 
-> If, for some reason, the list of characters can't be fetched, the application shows an `ErrorView` instead of the list of characters to inform the user:
+> If, for some reason, the list of characters can't be fetched, the application shows an `ErrorView` instead of the list of characters to inform the user:\
 > <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/error.png?raw=true" width=25% height=25%>\
 
 #### 3) Use the MVVM pattern throughout your app.
@@ -109,13 +109,13 @@ This app is made for the introductory part of the iPraktikum course at Technical
 > All views support dark mode:
 > 
 > **List Screen**\
-> ![](images/list_dark.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/list_dark.png?raw=true" width=25% height=25%>\
 > **Favorites Screen**\
-> ![](images/fav_dark.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/fav_dark.png?raw=true" width=25% height=25%>\
 > **Detail Screen**\
-> ![](images/detail_dark.png){height=25% width=25%}\
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/detail_dark.png?raw=true" width=25% height=25%>\
 > **List Screen (with error)**\
-> ![](images/error_dark.png){height=25% width=25%}
+> <img src="https://github.com/terlan98/breaking-bad-wiki/blob/feature/mandatory-assignment/images/error_dark.png?raw=true" width=25% height=25%>\
 
 #### 5) Include at least one third-party package.
 
