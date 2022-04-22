@@ -41,7 +41,7 @@ This app is made for the introductory part of the iPraktikum course at Technical
 ### Screens
 
 > **List Screen**\
-> ![](images/list.png){height=25% width=25%}\
+> ![](images/list.png =320x568)\
 > Shows a list of characters, offers search functionality\
 > **Favorites Screen**\
 > ![](images/fav.png){height=25% width=25%}\
